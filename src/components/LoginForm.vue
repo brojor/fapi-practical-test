@@ -3,40 +3,39 @@
     <p class="message">
       Vyplňte prosím své základní údaje, jakmile zpracujeme Vaši objednávku, budeme Vás kontaktovat.
     </p>
-    <label for="username">
-      <input
-        type="text"
-        name="username"
-        v-model="form.fullName.value"
-        placeholder="Jméno a příjmení"
-      />
-    </label>
-    <p v-if="form.fullName.error.length" class="error">{{ form.fullName.error }}</p>
-    <label for="email">
-      <input type="text" name="email" v-model="form.email.value" placeholder="e-mail" />
-    </label>
-    <p v-if="form.email.error.length" class="error">{{ form.email.error }}</p>
-    <label for="phone">
-      <input type="text" name="phone" v-model="form.phone.value" placeholder="Telefon" />
-    </label>
-    <p v-if="form.phone.error.length" class="error">{{ form.phone.error }}</p>
-
+    <FormItem
+      v-for="(data, formType, index) in form"
+      :key="index"
+      :type="formType"
+      :formItemData="data"
+      @valChange="form[formType].value = $event"
+    />
     <button @click="submit">Odeslat</button>
   </form>
 </template>
 
 <script>
+import FormItem from './FormItem.vue';
+
 export default {
   name: 'login',
+  components: {
+    FormItem,
+  },
 
   data() {
     return {
       form: {
-        fullName: { value: '', error: '' },
-        email: { value: '', error: '' },
-        phone: { value: '', error: '' },
+        fullName: { value: '', error: '', placeholder: 'Jméno a příjmení' },
+        email: { value: '', error: '', placeholder: 'E-mail' },
+        phone: { value: '', error: '', placeholder: 'Telefon' },
       },
     };
+  },
+  computed: {
+    error() {
+      return Object.values(this.form).some((item) => item.error.length > 0);
+    },
   },
   methods: {
     removeErrors() {
@@ -49,7 +48,11 @@ export default {
       this.validateFullName();
       this.validateEmail();
       this.validatePhone();
-      this.sendData();
+      if (!this.error) {
+        setTimeout(() => {
+          this.sendData();
+        }, 100);
+      }
     },
     sendData() {
       const dataToSend = Object.keys(this.form).reduce((obj, key) => {
@@ -64,7 +67,7 @@ export default {
     validateFullName() {
       const regName = /^[a-žA-Ž]+ [a-žA-Ž]+$/;
       if (!regName.test(this.form.fullName.value)) {
-        this.form.fullName.error = 'Není uvedeno celé jméno a příjmení';
+        this.form.fullName.error = 'Není uvedeno platné jméno a příjmení';
       }
     },
     validateEmail() {
@@ -74,7 +77,6 @@ export default {
       }
     },
     validatePhone() {
-      console.log('phone: ', this.form.phone.value);
       const regPhone = /^(\+420)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/;
       if (!regPhone.test(this.form.phone.value)) {
         this.form.phone.error = 'Telefonní číslo je zadáno chybně';
@@ -84,7 +86,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container {
   height: 95%;
   width: 90%;
@@ -97,22 +99,7 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-label {
-  width: 80%;
-  position: relative;
-  display: flex;
-}
-
-label:before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  margin-top: -4px;
-  width: 30px;
-}
-label[for='username']:before {
+label[for='fullName']:before {
   background: url('../assets/user.svg') center / contain no-repeat;
 }
 label[for='phone']:before {
@@ -121,22 +108,6 @@ label[for='phone']:before {
 label[for='email']:before {
   background: url('../assets/email.svg') center / contain no-repeat;
 }
-
-input {
-  width: 100%;
-  height: 2.5rem;
-  padding: 0.75rem 0;
-  padding-left: 3.3rem;
-  color: #222;
-  font-size: 1.2rem;
-  box-shadow: none;
-  /* background-color: #262d2d; */
-  border: none;
-  border: 1px solid #333;
-  margin: 1rem 0;
-  border-radius: 0.4rem;
-}
-
 button {
   margin: 1rem;
   padding: 1rem;
@@ -155,9 +126,5 @@ button {
   text-align: center;
   margin: 1.5em 0;
   font-size: 1.2rem;
-}
-.error {
-  color: red;
-  margin-top: -0.75rem;
 }
 </style>
