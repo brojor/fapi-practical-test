@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="form">
+      <LoginForm />
+    </div>
+    <div class="products">products</div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import LoginForm from '@/components/LoginForm.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    LoginForm,
   },
 };
 </script>
+<style scoped>
+.home {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+}
+.form {
+  background-color: pink;
+width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.products {
+  background-color: rgb(178, 240, 178);
+ width: 50%;
+
+}
+@media only screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+  }
+}
+</style>
