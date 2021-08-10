@@ -97,7 +97,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px;
 }
 
 label[for='fullName']:before {

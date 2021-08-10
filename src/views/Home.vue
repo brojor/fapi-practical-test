@@ -33,12 +33,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.left-side {
-  background-color: pink;
-}
-.right-side {
-  background-color: rgb(178, 240, 178);
-}
+
 @media only screen and (max-width: 1210px) {
   .home {
     flex-direction: column-reverse;

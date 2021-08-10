@@ -31,18 +31,12 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-.form {
-  background-color: pink;
-  flex-grow: 1;
-}
-.products {
-  background-color: rgb(178, 240, 178);
-  flex-grow: 1;
-}
-@media only screen and (max-width: 768px) {
-  .main {
-    flex-direction: column;
-  }
+  background: rgb(250, 221, 223);
+  background: linear-gradient(
+    126deg,
+    rgba(250, 221, 223, 1) 0%,
+    rgba(140, 200, 186, 0.12648809523809523) 49%,
+    rgba(250, 221, 223, 1) 100%
+  );
 }
 </style>

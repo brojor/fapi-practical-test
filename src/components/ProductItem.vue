@@ -63,8 +63,9 @@ export default {
   width: 95%;
   margin: 0.5rem 1rem;
   background-color: #fff;
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px;
   border-radius: 4px;
+  overflow: hidden;
 }
 .product-image {
   width: 20%;
