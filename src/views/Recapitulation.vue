@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Rekapitulace</h1>
       <select name="" id="" v-model="currency">
-        <option v-for="currency in rates" :key="currency.code" :value="currency">{{
+        <option v-for="currency in currencies" :key="currency.code" :value="currency">{{
           `${currency.code} - (${currency.country})`
         }}</option>
       </select>
@@ -27,8 +27,6 @@
   </div>
 </template>
 <script>
-import rates from '@/rates.json';
-
 export default {
   data() {
     return {
@@ -39,12 +37,14 @@ export default {
         code: 'CZK',
         exchangeRate: 1,
       },
-      rates,
     };
   },
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    currencies() {
+      return this.$store.state.currencies;
     },
   },
   methods: {
@@ -61,23 +61,11 @@ export default {
     totalPriceWithVAT(item) {
       return this.price(item) * item.amount;
     },
-    getString({ price, amount, name }) {
-      price /= this.currency.exchangeRate / this.currency.quantity;
-      const priceWithoutVAT = price - (price / 100) * 21;
-      const totalPriceWithoutVAT = priceWithoutVAT * amount;
-      const curr = this.currency.code;
-      return `${name}.....${amount} x ${priceWithoutVAT.toFixed(
-        2,
-      )} ${curr} = ${totalPriceWithoutVAT.toFixed(2)} ${curr} + 21% DPH = ${(
-        price * amount
-      ).toFixed(2)} ${curr}`;
-    },
   },
 };
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .container {
@@ -114,8 +102,8 @@ select {
 table {
   width: 95%;
   border-radius: 4px;
-  border-style: hidden; /* hide standard table (collapsed) border */
-  box-shadow: 0 0 0 1px rgb(0, 0, 0); /* this draws the table border  */
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgb(0, 0, 0);
   border-collapse: collapse;
   overflow: hidden;
 }

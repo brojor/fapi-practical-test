@@ -19,6 +19,9 @@ export default {
     LoginForm,
     Products,
   },
+  created() {
+    this.$store.dispatch('fetchExhangeRates');
+  },
 };
 </script>
 <style scoped>
@@ -27,7 +30,8 @@ export default {
   height: 100%;
   display: flex;
 }
-.left-side, .right-side {
+.left-side,
+.right-side {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -39,7 +43,8 @@ export default {
     flex-direction: column-reverse;
     overflow: scroll;
   }
-  .left-side, .right-side {
+  .left-side,
+  .right-side {
     width: 100%;
   }
 }

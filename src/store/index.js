@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import parseRates from '@/helpers/parseRates';
 
 export default createStore({
   state: {
@@ -59,6 +60,7 @@ export default createStore({
       // },
     ],
     cart: [],
+    currencies: [],
   },
   mutations: {
     ADD_TO_CART(state, item) {
@@ -71,6 +73,17 @@ export default createStore({
       const currentItem = state.cart.find((item) => item.id === itemId);
       currentItem.amount = Number(newValue);
     },
+    SET_CURRENCY_RATES(state, rates) {
+      console.log({ rates });
+      const essentialRate = {
+        country: 'Česká Republika',
+        currency: 'koruna',
+        quantity: 1,
+        code: 'CZK',
+        exchangeRate: 1,
+      };
+      state.currencies = [essentialRate, ...rates];
+    },
   },
   actions: {
     addToCart({ state, commit }, itemId) {
@@ -81,6 +94,16 @@ export default createStore({
         price,
         amount: 1,
       });
+    },
+    fetchExhangeRates({ commit }) {
+      const corsProxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+      const CNBUrl = 'https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt';
+      fetch(`${corsProxyUrl}${CNBUrl}`)
+        .then((response) => response.text())
+        .then((data) => {
+          const parsedData = parseRates(data);
+          commit('SET_CURRENCY_RATES', parsedData);
+        });
     },
   },
   getters: {
