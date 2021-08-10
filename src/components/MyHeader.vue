@@ -1,8 +1,19 @@
 <template>
   <header>
     <h1>FAPI - praktický test</h1>
+    <h1 class="total-price">Celkem: {{ totalPrice }} Kč</h1>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    totalPrice() {
+      return this.$store.getters.totalPrice.toFixed(2);
+    },
+  },
+};
+</script>
 
 <style scoped>
 .home {
@@ -16,10 +27,11 @@ header {
   background-color: #016cdb;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 h1 {
   color: #fff;
   font-size: 1.2rem;
-  margin-left: 1rem;
+  margin: 0 1rem;
 }
 </style>
