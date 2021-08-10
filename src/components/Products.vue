@@ -1,5 +1,6 @@
 <template>
   <div class="products-container">
+    <h2>Celkem: {{ totalPrice }} Kč</h2>
     <ProductItem v-for="product in products" :key="product.id" :product="product" />
   </div>
 </template>
@@ -14,6 +15,9 @@ export default {
   computed: {
     products() {
       return this.$store.state.products;
+    },
+    totalPrice() {
+      return this.$store.getters.totalPrice.toFixed(2);
     },
   },
 };

@@ -58,8 +58,35 @@ export default createStore({
       //   img: 'avocado.jpeg',
       // },
     ],
+    cart: [],
   },
-  mutations: {},
-  actions: {},
-  modules: {},
+  mutations: {
+    ADD_TO_CART(state, item) {
+      state.cart.push(item);
+    },
+    REMOVE_FROM_CART(state, itemId) {
+      state.cart = state.cart.filter((item) => item.id !== itemId);
+    },
+    MUTATE_AMOUNT(state, { itemId, newValue }) {
+      console.log({ newValue });
+      const currentItem = state.cart.find((item) => item.id === itemId);
+      console.log({ currentItem });
+      currentItem.amount = newValue;
+    },
+  },
+  actions: {
+    addToCart({ state, commit }, itemId) {
+      const { id, name, price } = state.products.find((item) => item.id === itemId);
+      commit('ADD_TO_CART', {
+        id,
+        name,
+        price,
+        amount: 1,
+      });
+    },
+  },
+  getters: {
+    // ...
+    totalPrice: (state) => state.cart.reduce((acc, item) => acc + item.price * item.amount, 0),
+  },
 });

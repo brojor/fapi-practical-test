@@ -43,6 +43,17 @@ export default {
       return price - (price / 100) * 21;
     },
   },
+  watch: {
+    amount(val, oldVal) {
+      if (oldVal === 0) {
+        this.$store.dispatch('addToCart', this.product.id);
+      } else if (val === 0) {
+        this.$store.commit('REMOVE_FROM_CART', this.product.id);
+      } else {
+        this.$store.commit('MUTATE_AMOUNT', { itemId: this.product.id, newValue: this.amount });
+      }
+    },
+  },
 };
 </script>
 
