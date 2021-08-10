@@ -1,5 +1,12 @@
 [
     {
+        "country": "Česká Republika",
+        "currency": "koruna",
+        "quantity": 1,
+        "code": "CZK",
+        "exchangeRate": 1
+    },
+    {
         "country": "Austrálie",
         "currency": "dolar",
         "quantity": 1,
