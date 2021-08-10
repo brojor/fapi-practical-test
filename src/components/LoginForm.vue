@@ -60,6 +60,7 @@ export default {
         obj[key] = this.form[key].value;
         return obj;
       }, {});
+      dataToSend.cart = this.$store.state.cart;
       alert(
         `Validace úspěšná - odesílám následující data:\n${JSON.stringify(dataToSend, null, 4)}`,
       );
