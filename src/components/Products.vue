@@ -22,11 +22,11 @@ export default {
 <style scoped>
 .products-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 50%;
+  height: 100%;
   background-color: rgb(178, 240, 178);
-  flex-wrap: wrap;
-  padding: 1rem;
 }
 </style>
