@@ -9,7 +9,7 @@
     <div class="product-text">
       <div class="product-text-left">
         <div class="product-title">{{ product.name }}</div>
-        <QuantityChanger />
+        <QuantityChanger :amount="amount" @change="amount = $event" />
       </div>
       <div class="product-text-right">
         <div>
@@ -17,9 +17,9 @@
           <p>Cena s DPH: {{ product.price.toFixed(2) }} Kč</p>
         </div>
         <div class="total-price">
-          <p>Cena celkem: {{ product.price.toFixed(2) }} Kč</p>
+          <p>Cena celkem: {{ (product.price * amount).toFixed(2) }} Kč</p>
         </div>
-        <button class="add-product">Přidat</button>
+        <!-- <button class="add-product">Přidat</button> -->
       </div>
     </div>
   </div>
@@ -33,6 +33,11 @@ export default {
     QuantityChanger,
   },
   props: ['product'],
+  data() {
+    return {
+      amount: 0,
+    };
+  },
   methods: {
     priceWithoutTax(price) {
       return price - (price / 100) * 21;
@@ -66,7 +71,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-grow: 1;
 }
 .product-title {
@@ -89,11 +94,11 @@ img {
   font-size: 1rem;
   font-weight: 500;
 }
-.add-product {
+/* .add-product {
   font-size: 0.9rem;
   padding: 0.25rem 0.5rem;
   width: auto;
   margin-left: auto;
   margin: 0;
-}
+} */
 </style>

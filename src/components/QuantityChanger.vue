@@ -1,18 +1,34 @@
 <template>
   <div class="quantity-changer">
     <p>Počet kusů:</p>
-    <div class="btn decrease">-</div>
-    <input type="number" v-model="amount" />
-    <div class="btn increase">+</div>
+    <div class="btn decrease" @click="decrease">-</div>
+    <input type="number" v-model="itemAmount" />
+    <div class="btn increase" @click="increase">+</div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      amount: 0,
-    };
+  props: ['amount'],
+  computed: {
+    itemAmount: {
+      get() {
+        return this.amount;
+      },
+      set(newValue) {
+        this.$emit('change', newValue);
+      },
+    },
+  },
+  methods: {
+    increase() {
+      this.itemAmount += 1;
+    },
+    decrease() {
+      if (this.itemAmount !== 0) {
+        this.itemAmount -= 1;
+      }
+    },
   },
 };
 </script>
