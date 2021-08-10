@@ -1,9 +1,11 @@
 <template>
   <div class="home">
-    <div class="form">
+    <div class="left-side">
       <LoginForm />
     </div>
-    <Products />
+    <div class="right-side">
+      <Products class="products" />
+    </div>
   </div>
 </template>
 
@@ -25,24 +27,25 @@ export default {
   height: 100%;
   display: flex;
 }
-.form {
+.left-side, .right-side {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-side {
   background-color: pink;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.products {
+.right-side {
   background-color: rgb(178, 240, 178);
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1210px) {
   .home {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    overflow: scroll;
+  }
+  .left-side, .right-side {
+    width: 100%;
   }
 }
 </style>

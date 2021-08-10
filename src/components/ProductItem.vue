@@ -13,11 +13,11 @@
       </div>
       <div class="product-text-right">
         <div>
-          <p>Cena bez DPH: {{ priceWithoutTax(product.price).toFixed(2) }} Kč</p>
-          <p>Cena s DPH: {{ product.price.toFixed(2) }} Kč</p>
+          <p>Bez DPH: {{ priceWithoutTax(product.price).toFixed(2) }} Kč</p>
+          <p>S DPH: {{ product.price.toFixed(2) }} Kč</p>
         </div>
         <div class="total-price">
-          <p>Cena celkem: {{ (product.price * amount).toFixed(2) }} Kč</p>
+          <p>Celkem: {{ (product.price * amount).toFixed(2) }} Kč</p>
         </div>
         <!-- <button class="add-product">Přidat</button> -->
       </div>
@@ -60,7 +60,7 @@ export default {
 <style>
 .product-item {
   display: flex;
-  width: 80%;
+  width: 95%;
   margin: 0.5rem 1rem;
   background-color: #fff;
   border: 1px solid black;
@@ -68,6 +68,8 @@ export default {
 }
 .product-image {
   width: 20%;
+  min-width: 100px;
+  height: auto;
 }
 img {
   width: 100%;

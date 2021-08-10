@@ -89,7 +89,8 @@ export default {
 <style>
 .container {
   height: 95%;
-  width: 90%;
+  width: 95%;
+  max-width: 700px;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
@@ -119,6 +120,7 @@ button {
   font-size: 1.4rem;
   font-family: 'Avenir Next', 'Avenir', sans-serif;
   font-weight: 600;
+  margin-bottom: 4rem;
 }
 
 .message {
