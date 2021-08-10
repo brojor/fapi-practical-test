@@ -64,6 +64,7 @@ export default {
       alert(
         `Validace úspěšná - odesílám následující data:\n${JSON.stringify(dataToSend, null, 4)}`,
       );
+      this.$router.push('recapitulation');
     },
     validateFullName() {
       const regName = /^[a-žA-Ž]+ [a-žA-Ž]+$/;

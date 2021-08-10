@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>FAPI - praktický test</h1>
+    <router-link to="/"><h1>FAPI - praktický test</h1></router-link>
     <h1 class="total-price">Celkem: {{ totalPrice }} Kč</h1>
   </header>
 </template>
@@ -33,5 +33,8 @@ h1 {
   color: #fff;
   font-size: 1.2rem;
   margin: 0 1rem;
+}
+a {
+  text-decoration: none;
 }
 </style>

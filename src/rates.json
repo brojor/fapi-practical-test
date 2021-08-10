@@ -1,0 +1,233 @@
+[
+    {
+        "country": "Austrálie",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "AUD",
+        "exchangeRate": 15.912
+    },
+    {
+        "country": "Brazílie",
+        "currency": "real",
+        "quantity": 1,
+        "code": "BRL",
+        "exchangeRate": 4.125
+    },
+    {
+        "country": "Bulharsko",
+        "currency": "lev",
+        "quantity": 1,
+        "code": "BGN",
+        "exchangeRate": 12.991
+    },
+    {
+        "country": "Čína",
+        "currency": "žen-min-pi",
+        "quantity": 1,
+        "code": "CNY",
+        "exchangeRate": 3.327
+    },
+    {
+        "country": "Dánsko",
+        "currency": "koruna",
+        "quantity": 1,
+        "code": "DKK",
+        "exchangeRate": 3.417
+    },
+    {
+        "country": "EMU",
+        "currency": "euro",
+        "quantity": 1,
+        "code": "EUR",
+        "exchangeRate": 25.41
+    },
+    {
+        "country": "Filipíny",
+        "currency": "peso",
+        "quantity": 100,
+        "code": "PHP",
+        "exchangeRate": 42.574
+    },
+    {
+        "country": "Hongkong",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "HKD",
+        "exchangeRate": 2.767
+    },
+    {
+        "country": "Chorvatsko",
+        "currency": "kuna",
+        "quantity": 1,
+        "code": "HRK",
+        "exchangeRate": 3.387
+    },
+    {
+        "country": "Indie",
+        "currency": "rupie",
+        "quantity": 100,
+        "code": "INR",
+        "exchangeRate": 29.039
+    },
+    {
+        "country": "Indonesie",
+        "currency": "rupie",
+        "quantity": 1000,
+        "code": "IDR",
+        "exchangeRate": 1.499
+    },
+    {
+        "country": "Island",
+        "currency": "koruna",
+        "quantity": 100,
+        "code": "ISK",
+        "exchangeRate": 17.192
+    },
+    {
+        "country": "Izrael",
+        "currency": "nový šekel",
+        "quantity": 1,
+        "code": "ILS",
+        "exchangeRate": 6.692
+    },
+    {
+        "country": "Japonsko",
+        "currency": "jen",
+        "quantity": 100,
+        "code": "JPY",
+        "exchangeRate": 19.6
+    },
+    {
+        "country": "Jižní Afrika",
+        "currency": "rand",
+        "quantity": 1,
+        "code": "ZAR",
+        "exchangeRate": 1.486
+    },
+    {
+        "country": "Kanada",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "CAD",
+        "exchangeRate": 17.215
+    },
+    {
+        "country": "Korejská republika",
+        "currency": "won",
+        "quantity": 100,
+        "code": "KRW",
+        "exchangeRate": 1.884
+    },
+    {
+        "country": "Maďarsko",
+        "currency": "forint",
+        "quantity": 100,
+        "code": "HUF",
+        "exchangeRate": 7.204
+    },
+    {
+        "country": "Malajsie",
+        "currency": "ringgit",
+        "quantity": 1,
+        "code": "MYR",
+        "exchangeRate": 5.101
+    },
+    {
+        "country": "Mexiko",
+        "currency": "peso",
+        "quantity": 1,
+        "code": "MXN",
+        "exchangeRate": 1.08
+    },
+    {
+        "country": "MMF",
+        "currency": "ZPČ",
+        "quantity": 1,
+        "code": "XDR",
+        "exchangeRate": 30.7
+    },
+    {
+        "country": "Norsko",
+        "currency": "koruna",
+        "quantity": 1,
+        "code": "NOK",
+        "exchangeRate": 2.437
+    },
+    {
+        "country": "Nový Zéland",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "NZD",
+        "exchangeRate": 15.183
+    },
+    {
+        "country": "Polsko",
+        "currency": "zlotý",
+        "quantity": 1,
+        "code": "PLN",
+        "exchangeRate": 5.577
+    },
+    {
+        "country": "Rumunsko",
+        "currency": "leu",
+        "quantity": 1,
+        "code": "RON",
+        "exchangeRate": 5.169
+    },
+    {
+        "country": "Rusko",
+        "currency": "rubl",
+        "quantity": 100,
+        "code": "RUB",
+        "exchangeRate": 29.404
+    },
+    {
+        "country": "Singapur",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "SGD",
+        "exchangeRate": 15.928
+    },
+    {
+        "country": "Švédsko",
+        "currency": "koruna",
+        "quantity": 1,
+        "code": "SEK",
+        "exchangeRate": 2.499
+    },
+    {
+        "country": "Švýcarsko",
+        "currency": "frank",
+        "quantity": 1,
+        "code": "CHF",
+        "exchangeRate": 23.69
+    },
+    {
+        "country": "Thajsko",
+        "currency": "baht",
+        "quantity": 100,
+        "code": "THB",
+        "exchangeRate": 64.562
+    },
+    {
+        "country": "Turecko",
+        "currency": "lira",
+        "quantity": 1,
+        "code": "TRY",
+        "exchangeRate": 2.509
+    },
+    {
+        "country": "USA",
+        "currency": "dolar",
+        "quantity": 1,
+        "code": "USD",
+        "exchangeRate": 21.52
+    },
+    {
+        "country": "Velká Británie",
+        "currency": "libra",
+        "quantity": 1,
+        "code": "GBP",
+        "exchangeRate": 29.951
+    }
+]
