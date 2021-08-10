@@ -59,5 +59,11 @@ input[type='number']::-webkit-outer-spin-button {
   align-items: center;
   color: #016cdb;
   font-weight: 600;
+  cursor: pointer;
+  user-select: none
+}
+.btn:active {
+  color: white;
+  background-color: #016cdb;
 }
 </style>

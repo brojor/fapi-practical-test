@@ -121,6 +121,10 @@ button {
   font-family: 'Avenir Next', 'Avenir', sans-serif;
   font-weight: 600;
   margin-bottom: 4rem;
+  cursor: pointer;
+}
+button:active {
+  background-color: #549be7;
 }
 
 .message {
