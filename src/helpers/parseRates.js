@@ -11,6 +11,7 @@ function parseNumbers(label, value) {
 
 export default function parseData(data) {
   const rows = data.split('\n').slice(2);
+  rows.pop();
   const labels = ['country', 'currency', 'quantity', 'code', 'exchangeRate'];
   return rows.map((row) => row.split('|').reduce((obj, item, index) => {
     const label = labels[index];

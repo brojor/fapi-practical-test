@@ -61,6 +61,13 @@ export default createStore({
     ],
     cart: [],
     currencies: [],
+    selectedCurrency: {
+      country: 'Česká Republika',
+      currency: 'koruna',
+      quantity: 1,
+      code: 'CZK',
+      exchangeRate: 1,
+    },
   },
   mutations: {
     ADD_TO_CART(state, item) {
@@ -84,6 +91,9 @@ export default createStore({
       };
       state.currencies = [essentialRate, ...rates];
     },
+    SET_SELECTED_CURRENCY(state, currency) {
+      state.selectedCurrency = currency;
+    },
   },
   actions: {
     addToCart({ state, commit }, itemId) {
@@ -105,8 +115,20 @@ export default createStore({
           commit('SET_CURRENCY_RATES', parsedData);
         });
     },
+    changeCurrence({ state, commit }, code) {
+      console.log({ code });
+      const selectedCurrency = state.currencies.find((currency) => currency.code === code);
+      console.log({ selectedCurrency });
+      commit('SET_SELECTED_CURRENCY', selectedCurrency);
+    },
   },
   getters: {
-    totalPrice: (state) => state.cart.reduce((acc, item) => acc + item.price * item.amount, 0),
+    totalPrice: (state) => {
+      const totalPrice = state.cart.reduce((acc, item) => {
+        const { exchangeRate, quantity } = state.selectedCurrency;
+        return acc + (item.price / exchangeRate) * item.amount * quantity;
+      }, 0);
+      return `${totalPrice.toFixed(2)} ${state.selectedCurrency.code}`;
+    },
   },
 });

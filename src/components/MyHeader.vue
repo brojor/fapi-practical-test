@@ -1,7 +1,7 @@
 <template>
   <header>
     <router-link to="/"><h1>FAPI - praktický test</h1></router-link>
-    <h1 class="total-price">Celkem: {{ totalPrice }} Kč</h1>
+    <h1 class="total-price">Celkem: {{ totalPrice }}</h1>
   </header>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   computed: {
     totalPrice() {
-      return this.$store.getters.totalPrice.toFixed(2);
+      return this.$store.getters.totalPrice;
     },
   },
 };

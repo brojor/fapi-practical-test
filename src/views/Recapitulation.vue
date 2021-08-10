@@ -2,8 +2,8 @@
   <div class="recap">
     <div class="container">
       <h1>Rekapitulace</h1>
-      <select name="" id="" v-model="currency">
-        <option v-for="currency in currencies" :key="currency.code" :value="currency">{{
+      <select name="" id="" :value="currency.code" @change="currencyChanged">
+        <option v-for="currency in currencies" :key="currency.code" :value="currency.code">{{
           `${currency.code} - (${currency.country})`
         }}</option>
       </select>
@@ -28,17 +28,6 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      currency: {
-        country: 'Česká Republika',
-        currency: 'koruna',
-        quantity: 1,
-        code: 'CZK',
-        exchangeRate: 1,
-      },
-    };
-  },
   computed: {
     cart() {
       return this.$store.state.cart;
@@ -46,8 +35,14 @@ export default {
     currencies() {
       return this.$store.state.currencies;
     },
+    currency() {
+      return this.$store.state.selectedCurrency;
+    },
   },
   methods: {
+    currencyChanged(event) {
+      this.$store.dispatch('changeCurrence', event.target.value);
+    },
     price(item) {
       return (item.price / this.currency.exchangeRate) * this.currency.quantity;
     },
