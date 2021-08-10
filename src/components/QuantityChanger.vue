@@ -16,7 +16,7 @@ export default {
         return this.amount;
       },
       set(newValue) {
-        this.$emit('change', newValue);
+        this.$emit('changeVal', Number(newValue));
       },
     },
   },

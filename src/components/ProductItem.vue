@@ -9,7 +9,7 @@
     <div class="product-text">
       <div class="product-text-left">
         <div class="product-title">{{ product.name }}</div>
-        <QuantityChanger :amount="amount" @change="amount = $event" />
+        <QuantityChanger :amount="amount" @changeVal="amount = $event" />
       </div>
       <div class="product-text-right">
         <div>

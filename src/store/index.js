@@ -68,10 +68,8 @@ export default createStore({
       state.cart = state.cart.filter((item) => item.id !== itemId);
     },
     MUTATE_AMOUNT(state, { itemId, newValue }) {
-      console.log({ newValue });
       const currentItem = state.cart.find((item) => item.id === itemId);
-      console.log({ currentItem });
-      currentItem.amount = newValue;
+      currentItem.amount = Number(newValue);
     },
   },
   actions: {
@@ -86,7 +84,6 @@ export default createStore({
     },
   },
   getters: {
-    // ...
     totalPrice: (state) => state.cart.reduce((acc, item) => acc + item.price * item.amount, 0),
   },
 });
