@@ -71,10 +71,12 @@ export default {
   width: 20%;
   min-width: 100px;
   height: auto;
+  overflow: hidden;
 }
 img {
   width: 100%;
   height: 100%;
+  transition-duration: 1s;
 }
 .product-text {
   display: flex;
@@ -107,6 +109,9 @@ img {
 .total-price {
   font-size: 1rem;
   font-weight: 500;
+}
+.product-item:hover img {
+  transform: scale(1.2);
 }
 /* .add-product {
   font-size: 0.9rem;

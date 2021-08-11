@@ -6,27 +6,28 @@ export default createStore({
     products: [
       {
         id: 1,
-        name: 'Budík',
-        price: 249,
-        img: 'alarmClock.jpeg',
-      },
-      {
-        id: 2,
         name: 'Donut',
         price: 29.9,
         img: 'donuts.jpeg',
       },
       {
-        id: 3,
+        id: 2,
         name: 'Třešně',
         price: 69.9,
         img: 'cherry.jpeg',
       },
       {
-        id: 4,
+        id: 3,
         name: 'Mandarinka',
         price: 49.9,
         img: 'tangerine.jpeg',
+      },
+
+      {
+        id: 4,
+        name: 'Avokádo',
+        price: 24.9,
+        img: 'avocado.jpeg',
       },
       // {
       //   id: 5,
@@ -52,12 +53,7 @@ export default createStore({
       //   price: 1490,
       //   img: 'phones.jpeg',
       // },
-      // {
-      //   id: 9,
-      //   name: 'Avokádo',
-      //   price: 24.9,
-      //   img: 'avocado.jpeg',
-      // },
+
     ],
     cart: [],
     currencies: [],
