@@ -26,6 +26,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   computed: {
@@ -83,9 +84,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 h1 {
   margin-bottom: 2rem;
 }
+
 select {
   margin-bottom: 1rem;
   width: 95%;
@@ -94,6 +97,7 @@ select {
   border: 1px solid rgb(65, 65, 65);
   border-radius: 4px;
 }
+
 table {
   width: 95%;
   border-radius: 4px;
@@ -108,17 +112,21 @@ td {
   border: 1px solid black;
   padding: 0.5rem;
 }
+
 th {
   background-color: #acd2fc;
 }
+
 td {
   text-align: right;
   font-family: 'Roboto Mono', monospace;
   white-space: nowrap;
 }
+
 td:first-child {
   text-align-last: left;
 }
+
 tr:nth-child(2n + 3) {
   background-color: #e3f0ff;
 }

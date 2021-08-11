@@ -1,6 +1,9 @@
 import { createStore } from 'vuex';
 import parseRates from '@/helpers/parseRates';
 
+const corsProxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+const CNBUrl = 'https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt';
+
 export default createStore({
   state: {
     products: [
@@ -29,31 +32,6 @@ export default createStore({
         price: 24.9,
         img: 'avocado.jpeg',
       },
-      // {
-      //   id: 5,
-      //   name: 'Banán',
-      //   price: 34.9,
-      //   img: 'banana.jpeg',
-      // },
-      // {
-      //   id: 6,
-      //   name: 'Telefon',
-      //   price: 2999,
-      //   img: 'phone.jpeg',
-      // },
-      // {
-      //   id: 7,
-      //   name: 'Brokolice',
-      //   price: 39.9,
-      //   img: 'broccoli.jpeg',
-      // },
-      // {
-      //   id: 8,
-      //   name: 'Sluchátka',
-      //   price: 1490,
-      //   img: 'phones.jpeg',
-      // },
-
     ],
     cart: [],
     currencies: [],
@@ -102,8 +80,6 @@ export default createStore({
       });
     },
     fetchExhangeRates({ commit }) {
-      const corsProxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-      const CNBUrl = 'https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt';
       fetch(`${corsProxyUrl}${CNBUrl}`)
         .then((response) => response.text())
         .then((data) => {

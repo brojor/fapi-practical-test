@@ -19,7 +19,6 @@
         <div class="total-price">
           <p>Celkem: {{ (product.price * amount).toFixed(2) }} Kč</p>
         </div>
-        <!-- <button class="add-product">Přidat</button> -->
       </div>
     </div>
   </div>
@@ -95,10 +94,6 @@ img {
   font-size: 1.4rem;
   font-weight: 500;
 }
-.amount-and-price {
-  display: flex;
-  justify-content: space-between;
-}
 .product-text-right {
   display: flex;
   flex-direction: column;
@@ -113,11 +108,4 @@ img {
 .product-item:hover img {
   transform: scale(1.2);
 }
-/* .add-product {
-  font-size: 0.9rem;
-  padding: 0.25rem 0.5rem;
-  width: auto;
-  margin-left: auto;
-  margin: 0;
-} */
 </style>

@@ -22,7 +22,6 @@ export default {
   components: {
     FormItem,
   },
-
   data() {
     return {
       form: {
@@ -56,7 +55,6 @@ export default {
     },
     sendData() {
       const dataToSend = Object.keys(this.form).reduce((obj, key) => {
-        console.log(obj[key]);
         obj[key] = this.form[key].value;
         return obj;
       }, {});
@@ -103,13 +101,13 @@ export default {
 }
 
 label[for='fullName']:before {
-  background: url('../assets/user.svg') center / contain no-repeat;
+  background: url('../assets/icons/user.svg') center / contain no-repeat;
 }
 label[for='phone']:before {
-  background: url('../assets/phone.svg') center / contain no-repeat;
+  background: url('../assets/icons/phone.svg') center / contain no-repeat;
 }
 label[for='email']:before {
-  background: url('../assets/email.svg') center / contain no-repeat;
+  background: url('../assets/icons/email.svg') center / contain no-repeat;
 }
 button {
   margin: 1rem;

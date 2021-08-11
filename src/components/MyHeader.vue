@@ -1,8 +1,8 @@
 <template>
   <header>
-    <router-link to="/"
-      ><h1>FAPI <span class="no-mobile">- praktický test</span></h1></router-link
-    >
+    <router-link to="/">
+      <h1>FAPI <span class="no-mobile">- praktický test</span></h1>
+    </router-link>
     <h1 class="total-price">Celkem: {{ totalPrice }}</h1>
   </header>
 </template>
