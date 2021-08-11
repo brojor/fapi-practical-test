@@ -24,7 +24,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .home {
   flex-grow: 1;
   height: 100%;
@@ -46,6 +46,14 @@ export default {
   .left-side,
   .right-side {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .no-mobile{
+    display: none;
+  }
+  table {
+    font-size: 0.9rem;
   }
 }
 </style>

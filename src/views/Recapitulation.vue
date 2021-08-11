@@ -10,15 +10,15 @@
       <table>
         <tr>
           <th>Produkt</th>
-          <th>Cena / ks (bez&#160;DPH)</th>
-          <th>Počet kusů</th>
+          <th class="no-mobile">Cena / ks (bez&#160;DPH)</th>
+          <th class="no-mobile"> Počet kusů</th>
           <th>Cena celkem (bez&#160;DPH)</th>
           <th>Cena (s&#160;DPH)</th>
         </tr>
         <tr v-for="item in cart" :key="item.id">
           <td>{{ item.name }}</td>
-          <td>{{ priceWithoutVAT(item).toFixed(2) }} {{ currency.code }}</td>
-          <td>{{ item.amount }}</td>
+          <td class="no-mobile">{{ priceWithoutVAT(item).toFixed(2) }} {{ currency.code }}</td>
+          <td class="no-mobile">{{ item.amount }}</td>
           <td>{{ totalPriceWithoutVAT(item).toFixed(2) }} {{ currency.code }}</td>
           <td>{{ totalPriceWithVAT(item).toFixed(2) }} {{ currency.code }}</td>
         </tr>
@@ -69,9 +69,9 @@ export default {
   align-items: center;
   justify-content: center;
   height: 65%;
-  width: 95%;
   padding: 2rem;
   max-width: 700px;
+  margin: 10px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px;
@@ -122,4 +122,5 @@ td:first-child {
 tr:nth-child(2n + 3) {
   background-color: #e3f0ff;
 }
+
 </style>
