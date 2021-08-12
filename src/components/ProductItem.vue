@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     priceWithoutTax(price) {
-      return price - (price / 100) * 21;
+      return price / 1.21;
     },
   },
   watch: {
