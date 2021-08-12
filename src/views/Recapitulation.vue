@@ -49,7 +49,7 @@ export default {
     },
     priceWithoutVAT(item) {
       const price = this.price(item);
-      return price - (price / 100) * 21;
+      return price / 1.21;
     },
     totalPriceWithoutVAT(item) {
       return this.priceWithoutVAT(item) * item.amount;
